@@ -4,7 +4,7 @@ name: Deploy to ECR
 on: 
   push:
     branches: [ master ]
-
+#jobs to do
 jobs:
   build:
     name: Build Image
@@ -23,7 +23,7 @@ jobs:
         AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
         AWS_REGION: us-east-1
 
-    - name: Build, test, tag, and push image to Amazon ECR
+    - name: Build, test, tag, and push image to Amazon ECR #build and test
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: clo835-week3
